@@ -15,6 +15,9 @@
     <!-- Normalize -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/modern-normalize@1.1.0/modern-normalize.min.css" />
 
+    <!-- Animate on scroll -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
     <!-- Custom styles -->
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
@@ -46,9 +49,19 @@
       <section class="hero">
         <div class="hero-container container">
           <h1 class="hero-title">Effective Solutions for Your Business</h1>
-          <button class="btn" type="button">Order Service</button>
+          <button class="btn" type="button" data-modal-open>Order Service</button>
         </div>
       </section>
+
+      <!-- Modal window -->
+
+      <div class="backdrop is-hidden" data-modal>
+        <div class="modal">
+          <button class="modal-btn" type="button" data-modal-close>
+            <svg class="modal-icon" width="8" height="8"><use href="./images/icon.svg#icon-close-black"></use></svg>
+          </button>
+        </div>
+      </div>
 
       <!-- Services -->
 
@@ -100,7 +113,7 @@
       <section class="section-examples section">
         <div class="container">
           <h2 class="section-title">What are we doing</h2>
-          <ul class="work-examples list">
+          <ul class="work-examples list" data-aos="fade-down">
             <li class="work-example"><img src="./images/Monitor.jpg" alt="Apple Monitor" width="360" /></li>
             <li class="work-example"><img src="./images/Phone.jpg" alt="Iphone" width="360" /></li>
             <li class="work-example"><img src="./images/Phone&Laptop.jpg" alt="Phone and Laptop" width="360" /></li>
@@ -360,5 +373,9 @@
         </div>
       </div>
     </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="./js/animation.js"></script>
+    <script src="./js/modal.js"></script>
   </body>
 </html>
