@@ -44,6 +44,10 @@ img {
   margin: 0;
 }
 
+.svg {
+  fill: currentColor;
+}
+
 /* reset end */
 
 .container {
@@ -271,14 +275,15 @@ body {
   visibility: visible;
   pointer-events: initial;
 
-  transition: opacity var(--animation);
-  visibility: var(--animation);
+  transition: opacity var(--animation), visibility var(--animation) backdrop-filter var(--animation);
 }
 
 .backdrop.is-hidden {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
+
+  transition-delay: 400ms;
 }
 
 .modal {
@@ -319,6 +324,18 @@ body {
   border: 1px solid rgba(0, 0, 0, 0.1);
 
   cursor: pointer;
+
+  transition: color var(--animation), background-color var(--animation);
+}
+
+.modal-btn:hover,
+.modal-btn:focus {
+  background-color: var(--button-color);
+  color: var(--primary-white-color);
+}
+
+.modal-icon {
+  fill: currentColor;
 }
 
 /* Section */
@@ -769,10 +786,7 @@ body {
   transition: transform var(--animation);
 }
 
-.portfolio-list:hover .overlay {
-  transform: translateY(0);
-}
-
+.portfolio-list:hover .overlay,
 .portfolio-list:focus .overlay {
   transform: translateY(0);
 }
